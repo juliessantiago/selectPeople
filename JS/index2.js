@@ -6,21 +6,6 @@ let data = document.getElementById("data");
 let inputData = document.getElementById("inputData");
 let pessoas = [];
 
-let pessoinhas = [
-    "maria", 
-    "henrique", 
-    "ismael", 
-    "julie", 
-    "daniele", 
-    "graciele"
-]
-
-for(let i=0; i<pessoinhas.length; i++){
-    let item = document.createElement('option');
-        item.appendChild(document.createTextNode(pessoinhas[i]));
-        nome.appendChild(item);
-}
-
 if(JSON.parse(sessionStorage.getItem("pessoas")) !== null){
     pessoas = JSON.parse(sessionStorage.getItem("pessoas"));
     montaTabela();
@@ -42,21 +27,26 @@ function criaArray() {
     
 }
 function montaTabela(){
-    let objData = new Date(data.value)
-    const dataFormat = (objData.toLocaleDateString('pt-BR', {
-        timeZone: 'UTC',
-    }))
-    let linha = `<tr>${dataFormat}</td>`
-    let conteudo = "";
+    if(data.value){
+        let objData = new Date(data.value)
+        const dataFormat = (objData.toLocaleDateString('pt-BR', {
+            timeZone: 'UTC',
+        }))
+         let linha = `<tr>${dataFormat}</td>`
+        inputData.innerHTML = linha;
+    }
+    
+    let conteudo = `<tr><td>Nome</td><td>Função</td></tr>`;
     for(let i=0; i<pessoas.length; i++){
         conteudo+=`
+        
         <tr> 
             <td>${pessoas[i].nome}</td>
             <td>${pessoas[i].funcao}</td>
         </tr>
     `
     }
-   inputData.innerHTML = linha;
+   
     corpoTab.innerHTML = conteudo;
 }
 function limpaForm(){
@@ -72,7 +62,7 @@ function limpar(){
 }
 
 function criaPlanilha() {
- 
+  if(pessoas.length!="" && pessoas.length!=null){
     var csv_data = [];
     //seleciona cada linha de dado
     var rows = document.getElementsByTagName('tr');
@@ -91,6 +81,10 @@ function criaPlanilha() {
     csv_data = csv_data.join('\n');
 
     downloadCSV(csv_data);
+  }else{
+    Swal.fire("Crie uma tabela primeiro");
+  }
+    
 }
 
 function downloadCSV(csv_data) {

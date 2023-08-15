@@ -1,5 +1,5 @@
 body {
-    font-family: 'Times New Roman', Times, serif;
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
 i:hover {
     cursor: pointer;
@@ -12,10 +12,9 @@ label{
     color: rgb(193, 131, 252, 0.8);
     font-size: 1em;
 }
-
-form-control::placeholder{
-    color: pink;
-    opacity:1 !important;
+.form-check-input:checked{
+    background-color: rgba(192, 25, 243, 0.7);
+    border-color: rgb(138, 17, 175);
 }
 
 .borders{
