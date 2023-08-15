@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="CSS/bootstrap.min.css">
+    <link rel="stylesheet" href="CSS/all.min.css">
+    <link rel="stylesheet" href="CSS/style.css">
+    <title>Designações</title>
+    <link rel="icon" type="image/x-icon" href="IMG/favicon.ico">
+</head>
+<body>
+    <div class="container mt-4">
+        <h1 class="mt-4">Designações</h1>
+        <div class="row">
+            <div class="col-6">
+                <form class="">
+                    <div class="form-group">
+                        <label for="nome" class="exampleInputEmail1">Nome: </label>
+                        <!-- <input id="nome" type="text" class="form-control borders"> -->
+                        <select name="select" class="form-control borders" id="nome">
+                            
+                          </select>
+                    </div>
+                   <div class="form-group">
+                    <label for="funcao" class="exampleInputEmail1">Função:</label>
+                    <!-- <input id="funcao" type="text" class="form-control borders"> -->
+                    <select name="select" class="form-control borders" id="funcao">
+                        <option value="zoom">Indicador Zoom</option>
+                        <option value="audio">Áudio</option>
+                        <option value="video">Vídeo</option>
+                      </select>
+                   </div>
+                   <div class="form-group">
+                    <label for="funcao" class="exampleInputEmail1">Semana de:</label>
+                        <input type="date" class="form-control borders" id="data">
+                   </div>
+                   
+                   <button id="btnAdiciona" class="btn btn-secondary m-2" type="button" onclick="criaArray()">Adicionar</button>
+        
+                </form>
+            </div>
+            <div class="col-6">
+                <img  src="IMG/operador.png" class="p-4">
+            </div>
+        </div><!--row--> 
+    </div>
+   
+    <div class="container mx-4">
+        <div class="">
+            <table class="table table-striped">
+                <thead class="cabecalho">
+                    <th>Semana de</th>
+                    <th id="inputData"></th>
+                </thead>
+                <tbody id="corpoTabela">
+                    <td>Nome</td>
+                    <td>Função</td>
+                </tbody>
+            </table>
+            <button class="btn btn-secondary m-2" onclick="limpar()">Limpar</button>
+            <button class="btn btn-secondary m-2" onclick="criaPlanilha()">Gerar Planilha</button>
+        </div>    
+    </div>
+    <script src="JS/index2.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</body>
+</html>

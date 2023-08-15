@@ -1,0 +1,28 @@
+body {
+    font-family: 'Times New Roman', Times, serif;
+}
+i:hover {
+    cursor: pointer;
+}
+h1{
+    color: rgb(193, 131, 252, 0.8);
+}
+label{
+    color: gray;
+    color: rgb(193, 131, 252, 0.8);
+    font-size: 1em;
+}
+
+form-control::placeholder{
+    color: pink;
+    opacity:1 !important;
+}
+
+.borders{
+    border: solid 0.8px !important;
+    color: var(--bs-purple) !important;
+}
+.cabecalho{
+    background-color: rgb(193, 131, 252, 0.5);
+    color: white;
+}
